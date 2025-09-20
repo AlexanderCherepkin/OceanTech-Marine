@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OceanTech Marine — Industrial Marine Equipment & Services</title>
+  <meta name="description" content="Marine-themed promo site (EN). Embedded equipment videos, clear services, and WeChat-based consultation for a China-based client." />
+  <meta property="og:title" content="OceanTech Marine — Industrial Marine Equipment & Services" />
+  <meta property="og:description" content="Embedded equipment videos, marine-grade services, and WeChat consultation." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en" />
+  <meta name="theme-color" content="#0a3b63" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%230a3b63' d='M0 0h100v100H0z'/%3E%3Cpath fill='%23ffffff' d='M10 60c20 15 60 15 80 0v20H10z'/%3E%3C/svg%3E" />
+  <style>
+    /* -------- Root & Reset -------- */
+    :root {
+      --bg: oklch(97% 0.01 250);
+      --surface: oklch(99% 0.005 250);
+      --text: oklch(18% 0.03 257);
+      --muted: oklch(60% 0.03 250);
+      --brand: oklch(45% 0.11 245);   /* deep ocean */
+      --brand-2: oklch(65% 0.15 220); /* teal */
+      --accent: oklch(70% 0.13 210);
+      --ring: oklch(80% 0.12 220);
+      --radius: 1.2rem;
+      --shadow: 0 0.2rem 0.6rem rgba(0,0,0,.08), 0 1.2rem 2.4rem rgba(0,0,0,.06);
+      --container: 70rem;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scrollbar-gutter: stable; }
+    body {
+      margin: 0; color: var(--text); background: var(--bg);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      line-height: 1.6; font-size: 1rem;
+    }
+    img, video { max-width: 100%; display: block; }
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: var(--container); margin-inline: auto; padding-inline: 1.2rem; }
+
+    /* -------- Header -------- */
+    header {
+      position: sticky; top: 0; z-index: 40; backdrop-filter: saturate(150%) blur(.6rem);
+      background: color-mix(in oklab, var(--surface) 80%, white 20% / 85%);
+      border-bottom: 0.05rem solid color-mix(in oklab, var(--brand) 20%, transparent 80%);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .9rem; }
+    .brand { display:flex; align-items:center; gap: .8rem; font-weight: 700; letter-spacing: .02em; }
+    .brand-logo { inline-size: 2rem; aspect-ratio: 1; border-radius: .6rem; background: linear-gradient(135deg, var(--brand), var(--brand-2)); display:grid; place-items:center; color:white; font-weight:900; }
+    .nav a.btn { padding: .7rem 1rem; border-radius: .8rem; background: var(--brand); color: white; box-shadow: var(--shadow); border: .08rem solid color-mix(in oklab, var(--brand) 60%, black 10%);
+      transition: transform .15s ease, background .2s ease; }
+    .nav a.btn:hover { transform: translateY(-.08rem); background: var(--brand-2); text-decoration: none; }
+
+    /* -------- Hero -------- */
+    .hero { position: relative; overflow: clip; }
+    .hero-inner { display:grid; grid-template-columns: 1.15fr .85fr; gap: 2rem; align-items: center; padding-block: 4rem; }
+    @media (max-width: 52rem){ .hero-inner{ grid-template-columns: 1fr; padding-block: 3rem; } }
+    .hero h1 { font-size: 2.2rem; line-height: 1.2; margin: 0 0 1rem; }
+    .hero p.lead { font-size: 1.1rem; color: var(--muted); margin: 0 0 1.4rem; }
+    .hero-cta { display:flex; gap: .8rem; flex-wrap: wrap; }
+    .btn { display:inline-flex; align-items:center; gap:.6rem; padding:.9rem 1.2rem; border-radius: .9rem; border: .08rem solid color-mix(in oklab, var(--brand) 30%, black 5%); background: white; color: var(--brand); font-weight: 600; box-shadow: var(--shadow); }
+    .btn.primary { background: linear-gradient(135deg, var(--brand), var(--brand-2)); border-color: color-mix(in oklab, var(--brand) 60%, black 10%); color: white; }
+    .btn:focus { outline: .2rem solid var(--ring); outline-offset: .12rem; }
+
+    .wave {
+      position:absolute; inset:auto 0 0; height: 8rem; pointer-events:none; opacity:.9;
+    }
+
+    /* -------- Section base -------- */
+    section { padding-block: 3.5rem; }
+    .section-head { display:flex; align-items: end; justify-content: space-between; gap: 1rem; margin-bottom: 1.6rem; }
+    .section-head h2 { margin:0; font-size: 1.6rem; line-height:1.2; }
+    .muted { color: var(--muted); font-size: .95rem; }
+
+    /* -------- Videos grid -------- */
+    .grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+    @media (max-width: 64rem){ .grid{ grid-template-columns: repeat(2, 1fr);} }
+    @media (max-width: 40rem){ .grid{ grid-template-columns: 1fr;} }
+    .card { background: var(--surface); border-radius: var(--radius); overflow: clip; box-shadow: var(--shadow); border: .06rem solid color-mix(in oklab, var(--brand) 15%, transparent 85%); }
+    .card-media { position:relative; aspect-ratio: 16/9; background: color-mix(in oklab, var(--brand) 8%, white 92%); }
+    .card-body { padding: 1rem; }
+    .chip { display:inline-block; background: color-mix(in oklab, var(--brand-2) 15%, white 85%); color: color-mix(in oklab, var(--brand) 80%, black 10%); padding: .35rem .6rem; border-radius: 100rem; font-size: .85rem; border:.05rem solid color-mix(in oklab, var(--brand-2) 20%, transparent 80%); }
+
+    .play-overlay { position:absolute; inset:0; display:grid; place-items:center; }
+    .play-btn { display:inline-grid; place-items:center; inline-size: 3.8rem; aspect-ratio:1; border-radius: 100rem; background: color-mix(in oklab, var(--brand-2) 40%, black 0% / 15%); backdrop-filter: blur(.3rem); border:.08rem solid color-mix(in oklab, var(--brand-2) 60%, black 10%); box-shadow: var(--shadow); cursor:pointer; }
+    .play-btn:after { content:''; inline-size: 0; border-left: 1.1rem solid white; border-top: .65rem solid transparent; border-bottom: .65rem solid transparent; margin-left: .2rem; }
+
+    /* -------- Services list -------- */
+    .services { display:grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    @media (max-width: 52rem){ .services{ grid-template-columns: 1fr; } }
+    .service { background: var(--surface); border-radius: var(--radius); padding: 1.2rem; border:.06rem solid color-mix(in oklab, var(--brand) 12%, transparent 88%); box-shadow: var(--shadow); }
+    .service h3 { margin-top: 0; font-size: 1.2rem; }
+
+    /* -------- CTA / Contact -------- */
+    .cta { background: linear-gradient(135deg, color-mix(in oklab, var(--brand) 25%, white 75%), color-mix(in oklab, var(--brand-2) 35%, white 65%)); border-block: .08rem solid color-mix(in oklab, var(--brand) 20%, transparent 80%); }
+    .cta .wrap { display:grid; grid-template-columns: 1.4fr .6fr; gap: 1rem; align-items:center; }
+    @media (max-width: 58rem){ .cta .wrap{ grid-template-columns: 1fr; } }
+    .wechat-box { display:grid; gap:.6rem; background: white; padding: 1rem; border-radius: var(--radius); border:.06rem solid color-mix(in oklab, var(--brand-2) 25%, transparent 75%); box-shadow: var(--shadow); }
+    .wechat-qr { inline-size: 10rem; aspect-ratio: 1; background: repeating-conic-gradient(from 0deg, var(--brand) 0 8%, var(--brand-2) 8% 16%); border-radius: .6rem; display:grid; place-items:center; color:white; font-weight:700; }
+
+    /* -------- Footer -------- */
+    footer { padding-block: 2rem; color: var(--muted); font-size: .9rem; }
+
+    /* -------- Modal (WeChat) -------- */
+    .modal { position: fixed; inset: 0; display: none; place-items: center; background: color-mix(in oklab, black 0%, white 0% / 50%); backdrop-filter: blur(.2rem); z-index: 60; }
+    .modal[aria-hidden="false"] { display:grid; }
+    .modal-card { background: var(--surface); border-radius: 1rem; padding: 1.2rem; inline-size: min(30rem, 92vw); box-shadow: var(--shadow);
+      border:.06rem solid color-mix(in oklab, var(--brand) 18%, transparent 82%); }
+    .modal-card h3 { margin-top: 0; }
+    .modal-actions { display:flex; justify-content: end; gap: .6rem; margin-top: .8rem; }
+
+    /* -------- Reduced Motion -------- */
+    @media (prefers-reduced-motion: reduce){
+      * { animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav container" aria-label="Main">
+      <div class="brand" aria-label="Site brand">
+        <span class="brand-logo" aria-hidden="true">⛵</span>
+        <span>OceanTech <span style="opacity:.7">Marine</span></span>
+      </div>
+      <div class="nav-cta" role="group" aria-label="Primary actions">
+        <a class="btn" href="#videos">Equipment Videos</a>
+        <a class="btn primary" href="#contact">Discuss on WeChat</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero container" id="home">
+      <div class="hero-inner">
+        <div>
+          <h1>Industrial Marine Equipment & On‑Board Solutions</h1>
+          <p class="lead">We build fast, secure, and mobile‑first websites for marine brands. This promo page shows embedded equipment videos and a clear workflow. Initial consultation is handled via <strong>WeChat</strong> for clients located in China.</p>
+          <div class="hero-cta">
+            <a class="btn primary" href="#videos" aria-label="Jump to equipment videos">See Videos</a>
+            <a class="btn" href="#services" aria-label="Jump to services">What We Deliver</a>
+          </div>
+        </div>
+        <div>
+          <!-- Decorative/ambient SVG wave -->
+          <svg viewBox="0 0 800 480" role="img" aria-label="Abstract ocean waves" style="block-size:auto; inline-size:100%; border-radius: var(--radius); box-shadow: var(--shadow); border:.06rem solid color-mix(in oklab, var(--brand) 12%, transparent 88%);">
+            <defs>
+              <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0%" stop-color="oklch(80% 0.12 220)"/>
+                <stop offset="100%" stop-color="oklch(60% 0.10 245)"/>
+              </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="800" height="480" fill="url(#g1)"/>
+            <path d="M0,360 C160,320 240,420 400,380 C560,340 640,420 800,380 L800,480 L0,480 Z" fill="oklch(92% 0.02 230)"/>
+            <path d="M0,330 C160,290 240,390 400,350 C560,310 640,390 800,350 L800,480 L0,480 Z" fill="oklch(95% 0.015 230)"/>
+          </svg>
+        </div>
+      </div>
+      <svg class="wave" viewBox="0 0 1440 240" preserveAspectRatio="none" aria-hidden="true">
+        <path fill="oklch(96% 0.01 240)" d="M0,160 C240,220 480,120 720,160 C960,200 1200,120 1440,160 L1440,240 L0,240 Z"></path>
+      </svg>
+    </section>
+
+    <!-- VIDEOS -->
+    <section id="videos" class="container">
+      <div class="section-head">
+        <h2>Equipment Videos</h2>
+        <p class="muted">Drop in your .mp4/.webm files at <code>/assets/videos/</code>. Posters at <code>/assets/posters/</code>.</p>
+      </div>
+      <div class="grid" role="list">
+        <!-- Card 1 -->
+        <article class="card" role="listitem">
+          <div class="card-media">
+            <video class="video" controls preload="metadata" playsinline poster="./poster_1280x720.jpg" data-src="./video.mov" aria-label="Ballast Water Treatment System in operation"></video>
+            <div class="play-overlay"><button class="play-btn" aria-label="Play video"></button></div>
+          </div>
+          <div class="card-body">
+            <span class="chip">Ballast Water</span>
+            <h3 style="margin:.5rem 0 .2rem; font-size:1.1rem;">Ballast Water Treatment System</h3>
+            <p class="muted" style="margin:0;">Real‑time neutralization cycle &amp; flow metrics.</p>
+          </div>
+        </article>
+        <!-- Card 2 -->
+        <article class="card" role="listitem">
+          <div class="card-media">
+            <video class="video" controls preload="metadata" playsinline poster="./poster2_1280x720.jpg" data-src="./video2.mp4" aria-label="Marine radar calibration clip"></video>
+            <div class="play-overlay"><button class="play-btn" aria-label="Play video"></button></div>
+          </div>
+          <div class="card-body">
+            <span class="chip">Navigation</span>
+            <h3 style="margin:.5rem 0 .2rem; font-size:1.1rem;">Marine Radar Calibration</h3>
+            <p class="muted" style="margin:0;">Antenna sweep, target tracking, and tuning demo.</p>
+          </div>
+        </article>
+        <!-- Card 3 -->
+        <article class="card" role="listitem">
+          <div class="card-media">
+            <video class="video" controls preload="metadata" playsinline poster="./poster3_1280x720.jpg" data-src="./video3.mp4" aria-label="RO seawater desalination unit"></video>
+            <div class="play-overlay"><button class="play-btn" aria-label="Play video"></button></div>
+          </div>
+          <div class="card-body">
+            <span class="chip">Utility</span>
+            <h3 style="margin:.5rem 0 .2rem; font-size:1.1rem;">RO/Seawater Desalination Unit</h3>
+            <p class="muted" style="margin:0;">Pressure stages, filters, and permeate quality.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="container">
+      <div class="section-head">
+        <h2>What We Deliver</h2>
+        <p class="muted">Mobile‑first, secure, and optimized for China‑region browsing.</p>
+      </div>
+      <div class="services">
+        <div class="service">
+          <h3>Promo Website (this page → full site)</h3>
+          <p>Clean brand section, equipment video gallery, services, and WeChat‑first contact flow. Built with accessible HTML/CSS/JS, all sizes in <strong>rem</strong>.</p>
+        </div>
+        <div class="service">
+          <h3>Performance & SEO</h3>
+          <p>Fast loading, media lazy‑loading, metadata, and clear structure. Optional CN CDN and ICP‑friendly hosting advice.</p>
+        </div>
+        <div class="service">
+          <h3>Process & Deliverables</h3>
+          <p>Discovery → Scope & Budget → ToR (ТЗ) → Design → Build → Handover. Iterations tracked; artifacts archived.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA / CONTACT -->
+    <section id="contact" class="cta">
+      <div class="container wrap">
+        <div>
+          <h2 style="margin:0 0 .6rem;">Discuss Details via WeChat</h2>
+          <p class="muted" style="margin:0 0 1rem;">The client is in China and speaks Russian; initial scoping is done via WeChat. After a short call we confirm the budget, timeline, and draft the ToR (ТЗ).</p>
+          <div class="hero-cta">
+            <button class="btn primary" data-open-modal="#wechat-modal" aria-haspopup="dialog" aria-controls="wechat-modal">Open WeChat QR</button>
+            <a class="btn" href="#services">See Process</a>
+          </div>
+        </div>
+        <div class="wechat-box" aria-label="WeChat quick info">
+          <strong>WeChat Ready</strong>
+          <span class="muted">We can share the project QR for direct contact. If WeChat is blocked on your network, we provide an alternative link.</span>
+          <div class="wechat-qr" role="img" aria-label="Placeholder for WeChat QR">QR</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    <div style="display:flex; flex-wrap: wrap; align-items:center; gap:.8rem; justify-content: space-between;">
+      <span>© <span id="year"></span> OceanTech Marine</span>
+      <span class="muted">Promo build • HTML/CSS/JS • EN</span>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div class="modal" id="wechat-modal" aria-hidden="true" aria-labelledby="wechat-title" role="dialog">
+    <div class="modal-card" role="document">
+      <h3 id="wechat-title">Scan to Connect on WeChat</h3>
+      <p class="muted">Replace the placeholder below with <code>assets/wechat-qr.png</code>. We will confirm the QR in chat before sharing.</p>
+      <div style="display:grid; place-items:center; padding: .6rem;">
+        <img src="assets/wechat-qr.png" alt="WeChat QR code placeholder" onerror="this.replaceWith(document.querySelector('.wechat-qr').cloneNode(true))" style="inline-size:min(16rem, 70vw); aspect-ratio:1; border-radius:.6rem; border:.06rem solid color-mix(in oklab, var(--brand-2) 25%, transparent 75%);" />
+      </div>
+      <div class="modal-actions">
+        <button class="btn" data-close-modal>Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Lightweight modal controls
+    const openers = document.querySelectorAll('[data-open-modal]');
+    const closers = document.querySelectorAll('[data-close-modal]');
+    openers.forEach(btn => btn.addEventListener('click', () => {
+      const target = document.querySelector(btn.getAttribute('data-open-modal'));
+      if (target){ target.setAttribute('aria-hidden', 'false'); target.querySelector('[role="document"]').focus?.(); }
+      document.body.style.overflow = 'hidden';
+    }));
+    closers.forEach(btn => btn.addEventListener('click', () => {
+      const modal = btn.closest('.modal');
+      modal?.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }));
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal[aria-hidden="false"]').forEach(m => m.setAttribute('aria-hidden','true'));
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Lazy-load <video> sources when in view
+    const lazyVideos = document.querySelectorAll('video.video[data-src]');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const v = entry.target;
+          const src = v.dataset.src;
+          if (src && !v.querySelector('source')) {
+            const source = document.createElement('source');
+            source.src = src;
+            source.type = 'video/mp4';
+            v.appendChild(source);
+            v.load();
+          }
+          io.unobserve(v);
+        }
+      });
+    }, { rootMargin: '200px' });
+    lazyVideos.forEach(v => io.observe(v));
+
+    // Play overlay → request fullscreen + play
+    document.querySelectorAll('.card .play-overlay').forEach(overlay => {
+      overlay.addEventListener('click', () => {
+        const video = overlay.previousElementSibling; // the <video>
+        try { video.requestFullscreen?.(); } catch(e) {}
+        video.play?.();
+      });
+    });
+  </script>
+
+  <!-- Simple Organization schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "OceanTech Marine",
+    "url": "https://example.com",
+    "description": "Industrial marine websites and media integration.",
+    "areaServed": ["Worldwide", "China"],
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "availableLanguage": ["en", "ru"],
+      "areaServed": "CN"
+    }]
+  }
+  </script>
+</body>
+</html>
